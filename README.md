@@ -25,3 +25,9 @@ Since this project is still in it's early days, you will need to set up some thi
    Launch your favorite browser and go to http://127.0.0.1:8000 and you should be greeted with the logger's homepage.
    
    ![missionlogger index](index.jpg?raw=true)
+   
+### Usage
+
+When viewing the main page (the /missions page) it is possibke to filter by clicking on a vessel name or on a mission status.
+This will show only the repective missions.
+In order to view all the missions again, click on `All Missions` in the top left.
