@@ -28,6 +28,8 @@ Since this project is still in it's early days, you will need to set up some thi
    
 ### Usage
 
-When viewing the main page (the /missions page) it is possibke to filter by clicking on a vessel name or on a mission status.
-This will show only the repective missions.
+When viewing the main page (the /missions page) it is possible to filter by clicking on a vessel name or on a mission status.
+
+This will show only the respective missions.
+
 In order to view all the missions again, click on `All Missions` in the top left.
