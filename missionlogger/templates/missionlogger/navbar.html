@@ -1,0 +1,22 @@
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper blue-grey darken-2">
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="{% url 'missionlogger:index' %}">All Missions</a></li>
+                <li><a href="{% url 'missionlogger:mission-add' %}">Add Mission</a></li>
+                <li><a href="{% url 'missionlogger:vessel-add' %}">Add Vessel</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="{% url 'missionlogger:index' %}">All Missions</a></li>
+                <li><a href="{% url 'missionlogger:mission-add' %}">Add Mission</a></li>
+                <li><a href="{% url 'missionlogger:vessel-add' %}">Add Vessel</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<script type="text/javascript">
+$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+});
+</script>

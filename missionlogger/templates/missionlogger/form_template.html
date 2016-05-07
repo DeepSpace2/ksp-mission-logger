@@ -1,0 +1,17 @@
+{% for field in form %}
+    <div class="row">
+        <div class="input-field col s9">
+            {{ field }}
+            {{ field.label_tag }}
+            {{ field.errors }}
+        </div>
+    </div>
+{% endfor %}
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+    $('select').material_select();
+    $('li').addClass('red-text');
+    $('textarea').addClass('materialize-textarea');
+  });
+</script>
+

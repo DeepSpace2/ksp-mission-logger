@@ -1,0 +1,15 @@
+{% extends 'missionlogger/base.html' %}
+
+{% block title %}Add Vessel{% endblock %}
+
+{% block body %}
+<div class="row">
+    <form class="col s9" action="" method="post">
+        {% csrf_token %}
+        {% include 'missionlogger/form_template.html' %}
+        <div class="row">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
