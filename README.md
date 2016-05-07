@@ -23,3 +23,5 @@ Since this project is still in it's early days, you will need to set up some thi
 
 1. Dir into the project's root directory with any command line interface, and run `python manage.py runserver`. 
    Launch your favorite browser and go to http://127.0.0.1:8000 and you should be greeted with the logger's homepage.
+   
+   ![missionlogger index](index.jpg?raw=true)
