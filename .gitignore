@@ -5,6 +5,7 @@
 
 
 db.sqlite3
+backup_db.sqlite3
 
 .idea/
 

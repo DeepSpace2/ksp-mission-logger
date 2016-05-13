@@ -1,9 +1,9 @@
 from django import forms
 from django.shortcuts import render
-from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import View, CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 from .models import Mission, Vessel
-from .query_sets import mission_querysets
+from .query_sets import mission_querysets, vessel_querysets
 
 
 class Index(View):
@@ -23,14 +23,13 @@ class VesselCreate(CreateView):
 
 
 class MissionDetail(View):
-    # TODO change to show proper info
     def get(self, request, mission_id):
-        context = {'mission': Mission.objects.get(pk=mission_id)}
+        context = {'mission': mission_querysets.get_mission_by_id(mission_id)}
         return render(request, 'missionlogger/mission_detail.html', context=context)
 
 
 class MissionForm(forms.ModelForm):
-    vessel = forms.ModelChoiceField(queryset=Vessel.objects.all().order_by('name'))
+    vessel = forms.ModelChoiceField(queryset=vessel_querysets.get_all_vessels(order_by='name'))
 
     class Meta:
         model = Mission
@@ -50,3 +49,10 @@ class MissionUpdate(UpdateView):
 class MissionDelete(DeleteView):
     model = Mission
     success_url = reverse_lazy('missionlogger:index')
+
+
+class AllVessels(View):
+    def get(self, request):
+        return render(request, 'missionlogger/vessels.html',
+                      context={'vessels': vessel_querysets.get_all_vessels('name')},
+                      status=200)

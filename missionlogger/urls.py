@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from django.views.generic import RedirectView
-from .views import Index, MissionDetail, MissionCreate, MissionUpdate, MissionDelete, VesselCreate
+from .views import Index, MissionDetail, MissionCreate, MissionUpdate, MissionDelete, VesselCreate, AllVessels
 
 app_name = 'missionlogger'
 urlpatterns = [
@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^mission/add$', MissionCreate.as_view(), name='mission-add'),
     url(r'^mission/(?P<pk>\d+)/update$', MissionUpdate.as_view(), name='mission-update'),
     url(r'^mission/(?P<pk>\d+)/delete$', MissionDelete.as_view(), name='mission-delete'),
+    url(r'^vessels$', AllVessels.as_view(), name='vessels'),
     url(r'^vessel/add$', VesselCreate.as_view(), name='vessel-add'),
 ]
 
